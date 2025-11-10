@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         BRIDGE_CLI_DIR = "${WORKSPACE}/bridge-cli"
-        DETECT_PROJECT_NAME = "my-blackduck-project"
+        DETECT_PROJECT_NAME = "qe-ninja-blackduck-project"
         DETECT_VERSION_NAME = "1.0.0"
         GO_VERSION="1.21.2"
         BD_URL = credentials('BLACKDUCK_URL') // or use credentials if you really want
