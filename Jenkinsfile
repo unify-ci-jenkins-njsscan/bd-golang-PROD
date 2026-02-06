@@ -76,11 +76,21 @@ pipeline {
                 '''
             }
         }
-
-        stage('Archive SARIF Report') {
+        stage('Security Scan') {
             steps {
-                archiveArtifacts artifacts: 'output/*.sarif', fingerprint: true
+                registerSecurityScan(
+                    // Security Scan to include
+                    artifacts: "blackduck-sarif-report.sarif",
+                    format: "sarif",
+                    archive: true
+                )
             }
         }
+
+        // stage('Archive SARIF Report') {
+        //     steps {
+        //         archiveArtifacts artifacts: 'output/*.sarif', fingerprint: true
+        //     }
+        // }
     }
 }
