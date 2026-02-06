@@ -80,7 +80,7 @@ pipeline {
             steps {
                 registerSecurityScan(
                     // Security Scan to include
-                    artifacts: "blackduck-sarif-report.sarif",
+                    artifacts: "output/blackduck-sarif-report.sarif",
                     format: "sarif",
                     archive: true
                 )
