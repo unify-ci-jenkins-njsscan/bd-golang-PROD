@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         BRIDGE_CLI_DIR = "${WORKSPACE}/bridge-cli"
-        DETECT_PROJECT_NAME = "qe-ninja-blackduck-project-qa"
+        DETECT_PROJECT_NAME = "qe-ninja-blackduck-project-prod"
         DETECT_VERSION_NAME = "1.0.0"
         GO_VERSION="1.21.2"
         BD_URL = credentials('BLACKDUCK_URL') // or use credentials if you really want
@@ -11,7 +11,7 @@ pipeline {
     }
     
     triggers {
-        cron '15 03 * * 1-5' // Runs at 03:15 on every day-of-week from Monday through Friday
+        cron '15 23 * * 1,4' // Runs at 23:15 on Monday and Thursday
          }
     
     stages {
